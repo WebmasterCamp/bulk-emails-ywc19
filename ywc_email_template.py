@@ -45,3 +45,35 @@ def build_camper_acceptance_letter_email(
     </p>
     """
     return build_body(body)
+
+
+
+def build_cert_email(
+    camper_title: str,
+    camper_fullname: str,
+    is_awarded: bool
+) -> str:
+    body = f"""
+    <p>เรียน {camper_title}{camper_fullname}<br/>
+    <br/>
+    ขอแสดงความยินดีที่ผ่านการเข้าร่วมโครงการ Young Webmaster Camp ครั้งที่ 19 อีเมลฉบับนี้ประกอบไปด้วยข้อมูลทั้งหมด 3 อย่าง ได้แก่
+    <ol>
+        <li>เกียรติบัตรรับรองการเข้าร่วมโครงการ{"และเกียรติบัตรรางวัล" if is_awarded else ""}</li>
+        <li>หลักฐานการโอนเงินมัดจำคืน</li>
+        <li>ตำแหน่งงานที่เปิดรับของบริษัทที่สนับสนุนโครงการ</li>
+    </ol>
+    โดยเกียรติบัตรและหลักฐานการโอนเงินมัดจำคืน สามารถดาวน์โหลดได้ที่ไฟล์แนบในอีเมลฉบับนี้<br/>
+    <br/>
+    สำหรับตำแหน่งงานที่เปิดรับของบริษัทที่สนับสนุนโครงการ สามารถดูได้ที่ 
+    <a target="_blank" href="https://discord.com/channels/1103321041826234439/1103662039366381598/1131150142997790802">ตำแหน่งงานที่เปิดรับของบริษัทที่สนับสนุนโครงการ</a><br/>
+    <br/>
+    หากมีข้อสงสัยประการใด สามารถสอบถามได้ที่ 
+    <a target="_blank" href="https://discord.com/channels/1103321041826234439/1103661179290791976">Discord YWC19</a> หรือ 
+    <a target="_blank" href="https://m.me/ywcth">Facebook Page YWC</a> ได้ทุกเมื่อ<br/>
+    <br/>
+    จึงเรียนมาเพื่อทราบ<br/>
+    นายจักภัท มิ่งมงคลมิตร<br/>
+    ประธานโครงการฯ
+    </p>
+    """
+    return build_body(body)
